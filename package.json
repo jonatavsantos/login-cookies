@@ -1,0 +1,22 @@
+{
+  "name": "random",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "random",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon random.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "random"
+  },
+  "author": "jonatavsantos",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "prisma": "^5.7.1"
+  }
+}
