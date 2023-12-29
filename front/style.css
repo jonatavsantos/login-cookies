@@ -1,0 +1,37 @@
+
+
+.box {
+    width: 300px;
+    margin: 160px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: ffff;
+}
+
+input {
+    width: 100%;
+    padding: 6px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    color:red;
+    border: none;
+    background-color: transparent;
+    border-width: 1px;
+    border-radius: 20px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #af4c4c; /* Cor da borda ao clicar no input */
+}
+
+#submit {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}
