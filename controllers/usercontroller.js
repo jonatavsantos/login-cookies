@@ -1,14 +1,19 @@
 import User from "../models/User.js";
 
-async function createUser(){
-    const data = req.body
+async function createUser(req, res) {
 
-    const newuser = await User.create(data)
+    try {
+        const data = req.body
 
-    if(newuser) {
-        console.log('Congratulations, your user created!')
-    } else {
-        console.log('Ow, something wrong happened')
+        const newuser = await User.create(data)
+
+        if (newuser) {
+            res.send('Congratulations, user created!')
+        } else {
+            res.redirect('index.html')
+        }
+    } catch (e) {
+        
     }
 }
 
