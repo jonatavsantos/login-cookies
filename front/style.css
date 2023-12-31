@@ -1,37 +1,44 @@
-
-
-.box {
-    width: 300px;
-    margin: 160px auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    background-color: ffff;
-}
-
-input {
-    width: 100%;
-    padding: 6px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    color:red;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #071552;
+    color: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .box {
+    background-color: #071552;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 12px;
     border: none;
-    background-color: transparent;
-    border-width: 1px;
-    border-radius: 20px;
-}
-
-input:focus {
-    outline: none;
-    border-color: #af4c4c; /* Cor da borda ao clicar no input */
-}
-
-#submit {
-    background-color: #4caf50;
-    color: white;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  input:focus {
+    border-color: #071552;
+  }
+  
+  input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
     cursor: pointer;
-}
-
-#submit:hover {
-    background-color: #45a049;
-}
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
