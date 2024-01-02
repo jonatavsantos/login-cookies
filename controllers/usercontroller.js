@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 const saltRounds = Number(process.env.SALT_ROUNDS)
 
@@ -24,4 +25,27 @@ async function createUser(req, res) {
     }
 }
 
-export default { createUser }
+async function signUser (req, res) {
+    try {
+        const { email, password } = req.body
+
+        const compare = await User.readByEmail(email)
+    
+        const { id, password: hash } = compare
+    
+        const match = await bcrypt.compare(password, hash)
+    
+        if(match) {
+            const token = jwt.sign({ id }, process.env.JWT_SECRET, {
+                expiresIn: 3600,
+            });
+            res.json({ auth: true, token })
+        } else {
+            res.json('Oh, token not found!')
+        }       
+    } catch (e) {
+        console.error('Error in login')        
+    }
+}
+
+export default { createUser, signUser }

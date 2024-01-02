@@ -8,4 +8,11 @@ async function create(user){
     return newuser 
 }
 
-export default { create }
+async function readByEmail(email) {
+    const useremail = prisma.user.findFirst({
+        where: email
+    })
+
+    return useremail
+}
+export default { create, readByEmail }

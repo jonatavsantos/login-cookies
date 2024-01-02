@@ -2,4 +2,8 @@ async function getIndex(req, res) {
     res.redirect('index.html')
 };
 
-export default { getIndex }
+async function getLogin(req, res) {
+    res.redirect('login.html')
+}
+
+export default { getIndex, getLogin }
