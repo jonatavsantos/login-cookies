@@ -39,12 +39,18 @@ async function signUser (req, res) {
             const token = jwt.sign({ id }, process.env.JWT_SECRET, {
                 expiresIn: 3600,
             });
-            res.json({ auth: true, token })
+
+            res.cookie('token', token, { httpOnly: true, maxAge: 3600000 });
+
+            console.log({ auth: true, token });
+
+            res.redirect('/random');
+
         } else {
-            res.json('Oh, token not found!')
+            res.status(401).json('404, Token not found!');
         }       
     } catch (e) {
-        console.error('Error in login')        
+        res.status(401).json('Return the page and insert your login again');      
     }
 }
 

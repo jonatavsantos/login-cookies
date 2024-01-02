@@ -9,11 +9,16 @@ body {
     margin: 0;
   }
   
+  h1 {
+    margin: 0px;
+    text-align: center;
+  }
+  
   .box {
     background-color: #071552;
     padding: 20px;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
