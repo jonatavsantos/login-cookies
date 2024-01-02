@@ -16,7 +16,7 @@ async function createUser(req, res) {
         const newuser = await User.create(data)
 
         if (newuser) {
-            res.send('Congratulations, user created!')
+            res.redirect('/login')
         } else {
             res.redirect('index.html')
         }
@@ -29,9 +29,9 @@ async function signUser (req, res) {
     try {
         const { email, password } = req.body
 
-        const compare = await User.readByEmail(email)
+        const compareuser = await User.readByEmail(email)
     
-        const { id, password: hash } = compare
+        const { id, password: hash } = compareuser
     
         const match = await bcrypt.compare(password, hash)
     

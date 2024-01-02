@@ -10,7 +10,9 @@ async function create(user){
 
 async function readByEmail(email) {
     const useremail = prisma.user.findFirst({
-        where: email
+        where: {
+            email
+        }
     })
 
     return useremail
