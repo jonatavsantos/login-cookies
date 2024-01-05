@@ -54,4 +54,22 @@ async function signUser (req, res) {
     }
 }
 
-export default { createUser, signUser }
+async function permissionUser(req, res, next) {
+    const cookie = req.cookies.token
+
+    if(!cookie) {
+        res.redirect('/login');
+    } else {
+        return next()
+    }
+}
+
+async function logoutUser(req, res) {
+    res.clearCookie('token');
+
+    console.log({ success: true, message: 'Logout successfull' });
+
+    res.redirect('/login');
+}
+
+export default { createUser, signUser, logoutUser, permissionUser }

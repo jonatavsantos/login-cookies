@@ -6,4 +6,8 @@ async function getLogin(req, res) {
     res.redirect('login.html')
 }
 
-export default { getIndex, getLogin }
+async function getRandom(req, res) {
+    res.redirect('random.html')
+}
+
+export default { getIndex, getLogin, getRandom }
